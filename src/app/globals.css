@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 29, 29, 29; /* Darker text for better readability */
+  --background-start-rgb: 245, 248, 250; /* Lighter background for a fresh look */
+  --background-end-rgb: 255, 255, 255; /* Pure white to blend smoothly */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255; /* White text for dark mode */
+    --background-start-rgb: 23, 25, 35; /* Darker shade for background start */
+    --background-end-rgb: 34, 38, 48; /* Slightly lighter shade for background end */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+          to bottom,
+          rgb(var(--background-start-rgb)),
+          rgb(var(--background-end-rgb))
+  );
+  font-family: 'Inter', sans-serif; /* Assuming Inter is the primary font */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .chat-message {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .chat-message-user {
+    background-color: rgb(59, 130, 246); /* Tailwind's blue-500 */
+    color: white;
+    align-self: flex-end;
+  }
+  .chat-message-other {
+    background-color: rgb(229, 231, 235); /* Tailwind's gray-200 */
+    color: rgb(31, 41, 55); /* Tailwind's gray-800 */
+    align-self: flex-start;
+  }
+}
